@@ -13,11 +13,27 @@
 // val = 5
 
 
-const title = document.getElementById("title")
+// const title = document.getElementById("title")
 
-// console.dir(title)
+// // console.dir(title)
 
-title.innerText = 'got you!';
+// title.innerText = 'got you!';
 
-console.log(title.id);
-console.log(title.className);
+// console.log(title.id);
+// console.log(title.className);
+
+
+// const his = document.getElementsByClassName("hi");
+
+// console.log(his);
+
+
+
+// const movie = document.getElementsByTagName("h1");
+
+// console.log(movie);
+
+
+const movie = document.querySelector(".movie h1")
+
+console.log(movie.innerText)
