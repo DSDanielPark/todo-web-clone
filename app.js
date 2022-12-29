@@ -54,3 +54,20 @@ function handleTitleClick(){
 }
 
 first_h1.addEventListener("click", handleTitleClick)
+
+
+function handleMouseEnter(){
+    console.log("mouse is here");
+}
+
+
+function handleMouseLeave(){
+    console.log("mouse is gone!");
+}
+
+
+first_h1.addEventListener("mouseenter", handleMouseEnter);
+
+
+
+first_h1.addEventListener("mouseleave", handleMouseLeave);
