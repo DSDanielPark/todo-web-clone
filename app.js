@@ -45,3 +45,12 @@ const first_h1 = document.querySelector(".movie:first-child h1");
 
 console.log(title);
 console.log(first_h1);
+
+first_h1.style.color = 'blue';
+
+
+function handleTitleClick(){
+    console.log("title was clicked!");
+}
+
+first_h1.addEventListener("click", handleTitleClick)
