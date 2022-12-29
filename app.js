@@ -34,6 +34,14 @@
 // console.log(movie);
 
 
-const movie = document.querySelector(".movie h1")
+// const movie = document.querySelector(".movie h1")
 
-console.log(movie.innerText)
+// console.log(movie.innerText)
+
+
+
+const title = document.querySelector(".movie");
+const first_h1 = document.querySelector(".movie:first-child h1");
+
+console.log(title);
+console.log(first_h1);
