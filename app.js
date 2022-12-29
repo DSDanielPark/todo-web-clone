@@ -53,8 +53,8 @@ function handleTitleClick(){
     first_h1.style.color = 'blue';
 }
 
-first_h1.addEventListener("click", handleTitleClick)
-
+// first_h1.addEventListener("click", handleTitleClick)
+first_h1.onclick = handleTitleClick;
 
 function handleMouseEnter(){
     console.log("mouse is here");
@@ -66,8 +66,15 @@ function handleMouseLeave(){
 }
 
 
-first_h1.addEventListener("mouseenter", handleMouseEnter);
+// first_h1.addEventListener("mouseenter", handleMouseEnter);
+first_h1.onmouseenter = handleMouseEnter;
+// first_h1.addEventListener("mouseleave", handleMouseLeave);
+first_h1.onmouseleave = handleMouseLeave;
 
 
+function handleWindowResize() {
+    document.body.style.backgroundColor = 'tomato';
+}
 
-first_h1.addEventListener("mouseleave", handleMouseLeave);
+
+window.addEventListener("resize", handleWindowResize);
