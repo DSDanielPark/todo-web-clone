@@ -194,3 +194,31 @@
 
 
 // ######################################### 6: css를 통한 포맷 변경
+
+const h1 = document.querySelector("div.movie:first-child h1");
+
+// function handleTitleClick() {
+//     h1.className = "active";
+// }
+
+
+// function handleTitleClick() {
+//     if (h1.className === "active") {
+//         h1.className = "";
+//     } else {
+//         h1.className = "active"
+//     };
+// }
+
+
+function handleTitleClick() {
+    const clickedClass = "clicked";
+    if (h1.className === clickedClass) {
+        h1.className = "";
+    } else {
+        h1.className = clickedClass;
+    };
+}
+
+
+h1.addEventListener("click", handleTitleClick);
