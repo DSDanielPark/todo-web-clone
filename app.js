@@ -221,7 +221,7 @@ const h1 = document.querySelector("div.movie:first-child h1");
 // }
 
 
-// using classList
+// // using classList
 function handleTitleClick() {
     const clickedClass = "clicked";
     if (h1.classList.contains(clickedClass)) {
@@ -229,6 +229,10 @@ function handleTitleClick() {
     } else {
         h1.classList.add(clickedClass);
     };
+}
+
+function handleTitleClick() {
+    h1.classList.toggle("clicked");
 }
 
 
