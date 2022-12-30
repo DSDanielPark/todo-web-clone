@@ -1,3 +1,5 @@
+// ######################################### 1 기본 문법
+
 // let val = 2
 // const val2 = 2.2
 // console.log(typeof val == typeof val2)
@@ -40,56 +42,59 @@
 
 
 
-const title = document.querySelector(".movie");
-const first_h1 = document.querySelector(".movie:first-child h1");
 
-console.log(title);
-console.log(first_h1);
+// ######################################### 2 이벤트 리스너 및 객체 접근
 
-// first_h1.style.color = 'blue';
+// const title = document.querySelector(".movie");
+// const first_h1 = document.querySelector(".movie:first-child h1");
 
+// console.log(title);
+// console.log(first_h1);
 
-function handleTitleClick(){
-    first_h1.style.color = 'blue';
-}
-
-// first_h1.addEventListener("click", handleTitleClick)
-first_h1.onclick = handleTitleClick;
-
-function handleMouseEnter(){
-    console.log("mouse is here");
-}
+// // first_h1.style.color = 'blue';
 
 
-function handleMouseLeave(){
-    console.log("mouse is gone!");
-}
+// function handleTitleClick(){
+//     first_h1.style.color = 'blue';
+// }
+
+// // first_h1.addEventListener("click", handleTitleClick)
+// first_h1.onclick = handleTitleClick;
+
+// function handleMouseEnter(){
+//     console.log("mouse is here");
+// }
 
 
-// first_h1.addEventListener("mouseenter", handleMouseEnter);
-first_h1.onmouseenter = handleMouseEnter;
-// first_h1.addEventListener("mouseleave", handleMouseLeave);
-first_h1.onmouseleave = handleMouseLeave;
+// function handleMouseLeave(){
+//     console.log("mouse is gone!");
+// }
 
 
-function handleWindowResize() {
-    document.body.style.backgroundColor = 'tomato';
-}
+// // first_h1.addEventListener("mouseenter", handleMouseEnter);
+// first_h1.onmouseenter = handleMouseEnter;
+// // first_h1.addEventListener("mouseleave", handleMouseLeave);
+// first_h1.onmouseleave = handleMouseLeave;
 
 
-window.addEventListener("resize", handleWindowResize);
+// function handleWindowResize() {
+//     document.body.style.backgroundColor = 'tomato';
+// }
 
 
-
-function handleWindowCopy {
-    alert("copier!!!");
-}
-
-window.addEventListener("copy", handleWindowCopy)
+// window.addEventListener("resize", handleWindowResize);
 
 
 
-// // 1st 정리과제
+// function handleWindowCopy {
+//     alert("copier!!!");
+// }
+
+// window.addEventListener("copy", handleWindowCopy)
+
+
+
+// ######################################### 3 각 이벤트 별로 하나의 핸들러에 담아서 확인하기
 // // <⚠️ DONT DELETE THIS ⚠️>
 // import "./styles.css";
 // const colors = ["#1abc9c", "#3498db", "#9b59b6", "#f39c12", "#e74c3c"];
@@ -131,3 +136,61 @@ window.addEventListener("copy", handleWindowCopy)
 // h2.addEventListener("mouseleave", superEventHandler.leave);
 // window.addEventListener("contextmenu", superEventHandler.rightclick);
 // window.addEventListener("resize", superEventHandler.resize);
+
+
+
+// ######################################### 4: windodw width 변하면 bg color 변하게
+
+// const colors = [
+//     "tomato",
+//     "#1abc9c",
+//     "#3498db",
+//     "#9b59b6",
+//     "#f39c12",
+//     "#e74c3c"
+//   ];
+  
+//   console.dir(document);
+  
+//   function resize() {
+//     const windowWidth = window.innerWidth;
+//     console.log(windowWidth);
+//     if (windowWidth <= 200) {
+//       document.body.style.backgroundColor = colors[0];
+//     } else if (windowWidth <= 400) {
+//       document.body.style.backgroundColor = colors[1];
+//     } else {
+//       document.body.style.backgroundColor = colors[2];
+//     }
+//   }
+  
+//   // window.addEventListener("contextmenu", rightclick);
+//   window.addEventListener("resize", resize);
+
+
+// ######################################### 5: if else 간단한 예제
+
+// const h1 = document.querySelector("div.movie:first-child h1");
+
+// function handleTitleClick() {
+//     // console.log(h1.style.color);
+//     // h1.style.color = "blue";
+//     // console.log(h1.style.color);
+
+//     const currTitleColor = h1.style.color;
+//     let newColor = "";
+
+//     if (currTitleColor === 'blue') {
+//         newColor = 'tomato';
+//     } else {
+//         newColor = 'blue';
+//     }   
+
+//     h1.style.color = newColor;
+    
+// }
+
+// h1.addEventListener("click", handleTitleClick);
+
+
+// ######################################### 6: css를 통한 포맷 변경
