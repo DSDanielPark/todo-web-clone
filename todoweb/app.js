@@ -33,22 +33,29 @@ const loginButton = loginForm.querySelector("button");
 
 // ########################### 2. onLoginSubmit 및 eventListener 생성해주기
 
-// enter나 클릭해주면 submit해준다.
-function onLoginSubmit(whatisthis) {
-    whatisthis.preventDefault();
-    console.log(whatisthis);
 
+const greeting = document.querySelector("#greeting") //id가 greeting
+const HIDDEN_CLASSNAME = "hidden";
+
+// enter나 클릭해주면 submit해준다.
+function onLoginSubmit(event) {
+    event.preventDefault();
+    // console.log(event);
+    loginForm.classList.add(HIDDEN_CLASSNAME);
     const username = loginInput.value;
-    console.log(username);
+    greeting.innerText = "Hello " + username;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+
 }
 
 loginForm.addEventListener("submit", onLoginSubmit);
 
 
+
+
+
 // ########################### 3. form의 default동작인 새로운 페이지로 가는 것을 막아보자
-
 const link = document.querySelector("a");
-
 
 function handleLinkClick(event){
     event.preventDefault(); //기본 동작 막았음
@@ -56,6 +63,5 @@ function handleLinkClick(event){
     console.dir(event);
     alert("click!");
 }
-
 
 link.addEventListener("click", handleLinkClick);
