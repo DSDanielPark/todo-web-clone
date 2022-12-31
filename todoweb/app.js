@@ -37,9 +37,25 @@ const loginButton = loginForm.querySelector("button");
 function onLoginSubmit(whatisthis) {
     whatisthis.preventDefault();
     console.log(whatisthis);
-    
+
     const username = loginInput.value;
     console.log(username);
 }
 
 loginForm.addEventListener("submit", onLoginSubmit);
+
+
+// ########################### 3. form의 default동작인 새로운 페이지로 가는 것을 막아보자
+
+const link = document.querySelector("a");
+
+
+function handleLinkClick(event){
+    event.preventDefault(); //기본 동작 막았음
+    console.log(event); // 좌표등의 값들이 MouseEvent에 담겨있다.
+    console.dir(event);
+    alert("click!");
+}
+
+
+link.addEventListener("click", handleLinkClick);
