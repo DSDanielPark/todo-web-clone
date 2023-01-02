@@ -36,6 +36,15 @@ const loginButton = loginForm.querySelector("button");
 
 const greeting = document.querySelector("#greeting") //id가 greeting
 const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
+
+
+function paintGreetings(username) {
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+}
+
+
 
 // enter나 클릭해주면 submit해준다.
 function onLoginSubmit(event) {
@@ -43,15 +52,30 @@ function onLoginSubmit(event) {
     // console.log(event);
     loginForm.classList.add(HIDDEN_CLASSNAME);
     const username = loginInput.value;
-    greeting.innerText = "Hello " + username;
-    greeting.classList.remove(HIDDEN_CLASSNAME);
+    localStorage.setItem(USERNAME_KEY, username);
+    // greeting.innerText = `Hello ${username}`;
+    // greeting.classList.remove(HIDDEN_CLASSNAME);
+    paintGreetings(username);
 
 }
 
 loginForm.addEventListener("submit", onLoginSubmit);
 
 
+//localStorage.nickname이 비어있으면 form을 보여주고, 아니면 숨기자
 
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+if(savedUsername == null) {
+    //show the form
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submt", onLoginSubmit);
+} else {
+    // show the greeting
+    // greeting.classList.remove(HIDDEN_CLASSNAME);
+    // greeting.innerText = `Hello ${savedUsername}`;
+    paintGreetings(savedUsername)
+}
 
 
 // ########################### 3. form의 default동작인 새로운 페이지로 가는 것을 막아보자
