@@ -86,6 +86,6 @@ function handleLinkClick(event){
     console.log(event); // 좌표등의 값들이 MouseEvent에 담겨있다.
     console.dir(event);
     alert("click!");
-}
+};
 
-link.addEventListener("click", handleLinkClick);
+// link.addEventListener("click", handleLinkClick);
