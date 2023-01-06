@@ -81,3 +81,10 @@ document.body.appendChild(bgImage)
   
 //   button.addEventListener("click", gradientColor);
   
+
+
+
+
+// document.body.style.background = `linear-gradient(to left, ${a}, ${b})`;
+// 최종적으로 선택된 두 가지 색상을 사용해 body태그의 배경을 linear-gradient로 바꿔줍니다. body의 style객체의 background프로퍼티를 이용합니다. `linear-gradient(to left, ${a}, ${b})`는 템플릿 리터럴이라고 하는 문자열 표기법입니다.
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
