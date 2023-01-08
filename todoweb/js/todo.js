@@ -7,7 +7,7 @@ const TODOS_KEY = "todos"
 
 
 // todo list를 local storage에 저장해서 새로고침되도 보이게
-const toDos = [];
+let toDos = [];
 
 
 function deleteToDo(event) {
@@ -57,5 +57,8 @@ console.log(savedToDos);
 
 if (saveToDos !== null) {
     const parsedToDos = JSON.parse(savedToDos);
-    parsedToDos.forEach((item) => console.log("thist is turn of", item));
+    toDos = parsedToDos
+
+    // parsedToDos.forEach((item) => console.log("thist is turn of", item));
+    parsedToDos.forEach(paintToDO);
 }
