@@ -1,2 +1,3 @@
 # todo-web-clone
-- to-do list toy
+- project ended: 23.01.09
+- to-do web for fun!
