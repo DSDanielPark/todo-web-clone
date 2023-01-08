@@ -13,6 +13,7 @@ let toDos = [];
 function deleteToDo(event) {
     // console.dir(event.target.parentElement.innerText);
     const li = event.target.parentElement;
+    console.log(li.id);
     li.remove();
 }
 
@@ -23,6 +24,7 @@ function saveToDos() {
 
 function paintToDO(newTodo) {
     const li = document.createElement("li");
+    li.id = newTodo.id;
     const span = document.createElement("span");
     const button = document.createElement("button");
     button.innerText = "X"
@@ -39,8 +41,14 @@ function handleToDoSumit(event) {
     event.preventDefault();
     const newTodo = toDoInput.value;
     toDoInput.value = "";
-    toDos.push(newTodo);
-    paintToDO(newTodo);
+    // toDo를 구조체로 변경하기
+    const newTodoObj = {
+        text: newTodo,
+        id: Date.now()
+    }
+
+    toDos.push(newTodoObj);
+    paintToDO(newTodoObj);
     saveToDos();
 }
 
@@ -55,7 +63,7 @@ const savedToDos = localStorage.getItem(TODOS_KEY);
 
 console.log(savedToDos);
 
-if (saveToDos !== null) {
+if (savedToDos !== null) {
     const parsedToDos = JSON.parse(savedToDos);
     toDos = parsedToDos
 
