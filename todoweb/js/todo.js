@@ -3,6 +3,9 @@ const toDoInput = toDoForm.querySelector("input");
 // const ToDoInput = document.querySelector("#todo-form input"); 바로 윗 줄과 동일
 const toDoList = document.getElementById("todo-list");
 
+const TODOS_KEY = "todos"
+
+
 // todo list를 local storage에 저장해서 새로고침되도 보이게
 const toDos = [];
 
@@ -15,7 +18,7 @@ function deleteToDo(event) {
 
 
 function saveToDos() {
-    localStorage.setItem("todos", toDos);
+    localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
 function paintToDO(newTodo) {
@@ -41,4 +44,18 @@ function handleToDoSumit(event) {
     saveToDos();
 }
 
-toDoForm.addEventListener("submit", handleToDoSumit)
+toDoForm.addEventListener("submit", handleToDoSumit);
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+
+// function sayHello(item) {
+//     console.log("this is turn of ", item);
+// }
+
+console.log(savedToDos);
+
+if (saveToDos !== null) {
+    const parsedToDos = JSON.parse(savedToDos);
+    parsedToDos.forEach((item) => console.log("thist is turn of", item));
+}
