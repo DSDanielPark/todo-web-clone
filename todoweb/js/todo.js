@@ -13,8 +13,11 @@ let toDos = [];
 function deleteToDo(event) {
     // console.dir(event.target.parentElement.innerText);
     const li = event.target.parentElement;
-    console.log(li.id);
+    // console.log(li.id);
+    // console.log(typeof li.id);
     li.remove();
+    toDos = toDos.filter((todo) => todo.id !== parseInt(li.id));
+    
 }
 
 
